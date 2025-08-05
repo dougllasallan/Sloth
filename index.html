@@ -1,171 +1,188 @@
 <!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sloth - Camas com Conforto</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLOTH</title>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+    body {
       font-family: 'Comfortaa', sans-serif;
-      background: #7b7b7b;
-      color: #333;
+      background: white;
+      color: black;
     }
     header {
-      background: #53576b;
-      padding: 20px 20px 10px;
-      text-align: center;
-    }
-    header img {
-      height: 150px;
-    }
-    header h1 {
-      margin: 10px 0 5px;
-    }
-    header p {
-      margin: 10px 0 0;
-    }
-    nav {
-      background: #53576b;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-    section {
-      padding: 30px;
-      background: #7b7b7b;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .product {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background: white;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 15px 20px;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    .icons img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+    .gif-banner {
+      width: 100%;
+      height: auto;
+    }
+    .hidden-section {
+      display: none;
+      padding: 20px;
+      background: white;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    .product-grid .product {
       text-align: center;
     }
     .product img {
       width: 100%;
-      border-radius: 4px;
-      max-height: 150px;
+      border-radius: 8px;
       object-fit: cover;
     }
-    .product a {
-      color: black;
-      text-decoration: none;
-    }
     footer {
-      background: #009688;
-      color: white;
-      text-align: center;
-      padding: 20px;
+      background: white;
+      color: black;
+      padding: 30px 20px;
+      font-size: 14px;
     }
-    .btn-whats {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 15px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 16px;
+    footer section {
+      margin-bottom: 20px;
+    }
+    .footer-title {
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .footer-content {
+      display: none;
+      margin-top: 10px;
+    }
+    .footer-bottom {
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+      font-size: 12px;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+    }
+    .left-label {
+      text-align: left;
+      margin-top: 15px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Logo Sloth" />
-    <p>Seu descanso é nossa missão: durma como sonhador, acorde como rei.</p>
-  </header>
-  <nav>
-    <a href="#home">Início</a>
-    <a href="#produtos">Produtos</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#contato">Contato</a>
-  </nav>  <section id="home">
-    <h2>Bem-vindo à Sloth</h2>
-    <p>Na Sloth, conforto vem antes de tudo. Fabricamos camas com qualidade, entrega rápida e preço justo.</p>
-  </section>  <section id="produtos">
-    <h2>Nossos Produtos</h2>
-    <div class="products">
-      <div class="product">
-        <a href="produto.html?produto=baú-solteiro">
-          <h3>Baú solteiro</h3>
-          <img src="baúsolteiro.png" alt="Baú solteiro">
-          <p>R$ 450</p>
-        </a>
-      </div>
-      <div class="product">
-        <a href="produto.html?produto=baú-casal">
-          <h3>Baú casal</h3>
-          <img src="baúcasal.png" alt="Baú casal">
-          <p>R$ 550</p>
-        </a>
-      </div>
-      <div class="product">
-        <a href="produto.html?produto=baú-queen-size">
-          <h3>Baú queen size</h3>
-          <img src="baúqueensize.png" alt="Baú queen size">
-          <p>R$ 900</p>
-        </a>
-      </div>
-      <div class="product">
-        <a href="produto.html?produto=baú-king-size">
-          <h3>Baú king size</h3>
-          <img src="baúkingsize.png" alt="Baú king size">
-          <p>R$ 1.100</p>
-        </a>
-      </div>
-      <div class="product">
-        <a href="produto.html?produto=box-solteiro">
-          <h3>Box solteiro</h3>
-          <img src="boxsolteiro.png" alt="Box solteiro">
-          <p>R$ 220</p>
-        </a>
-      </div>
-      <div class="product">
-        <a href="produto.html?produto=box-casal">
-          <h3>Box casal</h3>
-          <img src="boxcasal.png" alt="Box casal">
-          <p>R$ 250</p>
-        </a>
-      </div>
-      <div class="product">
-        <a href="produto.html?produto=box-queen-size">
-          <h3>Box queen size</h3>
-          <img src="boxqueensize.png" alt="Box queen size">
-          <p>R$ 380</p>
-        </a>
-      </div>
-      <div class="product">
-        <a href="produto.html?produto=box-king-size">
-          <h3>Box king size</h3>
-          <img src="boxkingsize.png" alt="Box king size">
-          <p>R$ 420</p>
-        </a>
-      </div>
+    <div class="logo">SLOTH</div>
+    <div class="icons">
+      <img src="lupa.png" alt="Pesquisar" onclick="toggleSearch()">
+      <img src="carrinho.png" alt="Carrinho">
+      <img src="menu.png" alt="Menu" onclick="toggleProdutos()">
     </div>
-  </section>  <section id="sobre">
-    <h2>Sobre Nós</h2>
-    <p>A Sloth nasceu com uma missão simples: ajudar você a descansar melhor. Produzimos camas de qualidade, com carinho e dedicação, direto de Sapiranga-RS.</p>
-  </section>  <section id="contato">
-    <h2>Contato</h2>
-    <p>Fale com a gente no WhatsApp: <a href="https://wa.me/5551999313344" target="_blank">(51) 99931-3344</a></p>
-    <p>Instagram: <a href="https://instagram.com/slothcamas" target="_blank">@slothcamas</a></p>
-    <p>Estamos em Sapiranga - RS</p>
-  </section><a class="btn-whats" href="https://wa.me/5551999313344" target="_blank">💬 WhatsApp</a>
+  </header>  <!-- GIF inicial -->  <img src="animacao-cama.gif" class="gif-banner" alt="Cama com movimento">  <!-- Produtos -->  <div id="produtos" class="hidden-section">
+    <div class="product-grid">
+      <div class="product"><img src="baúsolteiro.png" alt="Baú Solteiro"><p>Baú Solteiro</p></div>
+      <div class="product"><img src="baúcasal.png" alt="Baú Casal"><p>Baú Casal</p></div>
+      <div class="product"><img src="baúqueensize.png" alt="Baú Queen Size"><p>Baú Queen Size</p></div>
+      <div class="product"><img src="baúkingsize.png" alt="Baú King Size"><p>Baú King Size</p></div>
+      <div class="product"><img src="boxsolteiro.png" alt="Box Solteiro"><p>Box Solteiro</p></div>
+      <div class="product"><img src="boxcasal.png" alt="Box Casal"><p>Box Casal</p></div>
+      <div class="product"><img src="boxqueensize.png" alt="Box Queen Size"><p>Box Queen Size</p></div>
+      <div class="product"><img src="boxkingsize.png" alt="Box King Size"><p>Box King Size</p></div>
+    </div>
+    <div class="footer-title" onclick="toggleSobre()">sobre \/</div>
+    <div id="sobre" class="footer-content">
+      <p>Endereço: Rua Exemplo, 123</p>
+      <p>Cidade: Sapiranga - RS</p>
+      <p>Somos fabricantes de camas com foco em conforto, preço justo e entrega rápida.</p>
+    </div>
+  </div>  <!-- Rodapé -->  <footer>
+    <section>
+      <div class="footer-title" onclick="toggleFooter('suporte')">suporte \/</div>
+      <div id="suporte" class="footer-content">
+        <p>Suporte técnico</p>
+        <p>Agendar um reparo</p>
+        <p>WhatsApp</p>
+        <p>Informações de garantia</p>
+      </div>
+    </section><section>
+  <div class="footer-title" onclick="toggleFooter('quemsomos')">quem somos \/</div>
+  <div id="quemsomos" class="footer-content">
+    <p>Endereço: Rua Exemplo, 123</p>
+    <p>Cidade: Sapiranga - RS</p>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Sloth Camas. Todos os direitos reservados.</p>
-  </footer>
-</body>
+<section class="footer-bottom">
+  <p>Copyright© 2020-2025 SLOTH. Todos os direitos reservados.</p>
+  <p>Esse website é melhor visualizado nas versões Microsoft Internet Explorer 11 ou superior e/ou nas últimas versões dos navegadores Google Chrome e Mozilla Firefox.</p>
+  <p>Formas de pagamento aceitas: Pagamento na entrega, Pix, Dinheiro, Cartão de crédito 12x c/juros (Visa, MasterCard e Elo).</p>
+  <p class="left-label">Brasil/Português</p>
+  <div style="text-align: center;">
+    <p><strong>Siga-nos</strong></p>
+    <div class="social-icons">
+      <img src="facebook.png" alt="Facebook">
+      <img src="instagram.png" alt="Instagram">
+    </div>
+  </div>
+</section>
+
+  </footer>  <script>
+    function toggleProdutos() {
+      const el = document.getElementById('produtos');
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+    function toggleSobre() {
+      const el = document.getElementById('sobre');
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+    function toggleFooter(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+    function toggleSearch() {
+      const termo = prompt("Digite o nome do produto para pesquisar:");
+      if (!termo) return;
+      const produtos = document.querySelectorAll(".product p");
+      produtos.forEach(p => {
+        const card = p.parentElement;
+        if (p.textContent.toLowerCase().includes(termo.toLowerCase())) {
+          card.style.border = "2px solid green";
+        } else {
+          card.style.border = "none";
+        }
+      });
+    }
+  </script></body>
 </html>
