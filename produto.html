@@ -2,110 +2,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baú Casal - Sloth</title>
+  <title>Sloth - Camas com Conforto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Comfortaa', sans-serif;
       margin: 0;
-      background-color: #7b7b7b;
-      color: #fff;
+      font-family: 'Comfortaa', sans-serif;
+      background: #7b7b7b;
+      color: #333;
     }
     header {
-      background-color: #53576b;
-      padding: 15px;
+      background: #53576b;
+      padding: 20px 20px 10px;
+      text-align: center;
+    }
+    header img {
+      height: 150px;
+    }
+    header h1 {
+      margin: 10px 0 5px;
+    }
+    header p {
+      margin: 10px 0 0;
+    }
+    nav {
+      background: #53576b;
+      padding: 10px;
       text-align: center;
     }
     nav a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
     }
-    .container {
-      display: flex;
-      flex-wrap: wrap;
+    section {
       padding: 30px;
-      background-color: #fff;
-      color: #000;
-      border-radius: 10px;
-      max-width: 1200px;
-      margin: 30px auto;
+      background: #7b7b7b;
     }
-    .main-image {
-      flex: 1;
-      padding: 10px;
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
     }
-    .main-image img {
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
       width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-    }
-    .thumbnail-row {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-      flex-wrap: wrap;
-    }
-    .thumbnail-row img {
-      width: 70px;
-      height: 70px;
+      border-radius: 4px;
+      max-height: 150px;
       object-fit: cover;
-      border-radius: 5px;
-      cursor: pointer;
     }
-    .info {
-      flex: 1;
-      padding: 10px;
+    .product a {
+      color: black;
+      text-decoration: none;
     }
-    h1 {
-      margin-top: 0;
-    }
-    .stars {
-      font-size: 20px;
-      color: gold;
+    footer {
+      background: #009688;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
     .btn-whats {
-      display: inline-block;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       background: #25D366;
       color: white;
-      padding: 10px 20px;
+      padding: 15px 20px;
       border-radius: 50px;
       text-decoration: none;
       font-size: 16px;
-      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="index.html#produtos">Produtos</a>
-      <a href="index.html#sobre">Sobre</a>
-      <a href="index.html#contato">Contato</a>
-    </nav>
-  </header>  <div class="container">
-    <div class="main-image">
-      <h1><strong>Baú Casal</strong></h1>
-      <img src="baúcasal.png" alt="Baú Casal">
-      <div class="thumbnail-row">
-        <img src="baúcasal_1.png" alt="Baú Casal 1">
-        <img src="baúcasal_2.png" alt="Baú Casal 2">
-        <img src="baúcasal_3.png" alt="Baú Casal 3">
-        <img src="baúcasal_4.png" alt="Baú Casal 4">
-        <img src="baúcasal_5.png" alt="Baú Casal 5">
+    <img src="logo.png" alt="Logo Sloth" />
+    <h1>Sloth</h1>
+    <p>Seu descanso é nossa missão: durma como sonhador, acorde como rei.</p>
+  </header>
+  <nav>
+    <a href="#home">Início</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>  <section id="home">
+    <h2>Bem-vindo à Sloth</h2>
+    <p>Na Sloth, conforto vem antes de tudo. Fabricamos camas com qualidade, entrega rápida e preço justo.</p>
+  </section>  <section id="produtos">
+    <h2>Nossos Produtos</h2>
+    <div class="products">
+      <div class="product">
+        <a href="produto.html?produto=baú-solteiro">
+          <h3>Baú solteiro</h3>
+          <img src="baúsolteiro.png" alt="Baú solteiro">
+          <p>R$ 450</p>
+        </a>
+      </div>
+      <div class="product">
+        <a href="produto.html?produto=baú-casal">
+          <h3>Baú casal</h3>
+          <img src="baúcasal.png" alt="Baú casal">
+          <p>R$ 550</p>
+        </a>
+      </div>
+      <div class="product">
+        <a href="produto.html?produto=baú-queen-size">
+          <h3>Baú queen size</h3>
+          <img src="baúqueensize.png" alt="Baú queen size">
+          <p>R$ 900</p>
+        </a>
+      </div>
+      <div class="product">
+        <a href="produto.html?produto=baú-king-size">
+          <h3>Baú king size</h3>
+          <img src="baúkingsize.png" alt="Baú king size">
+          <p>R$ 1.100</p>
+        </a>
+      </div>
+      <div class="product">
+        <a href="produto.html?produto=box-solteiro">
+          <h3>Box solteiro</h3>
+          <img src="boxsolteiro.png" alt="Box solteiro">
+          <p>R$ 220</p>
+        </a>
+      </div>
+      <div class="product">
+        <a href="produto.html?produto=box-casal">
+          <h3>Box casal</h3>
+          <img src="boxcasal.png" alt="Box casal">
+          <p>R$ 250</p>
+        </a>
+      </div>
+      <div class="product">
+        <a href="produto.html?produto=box-queen-size">
+          <h3>Box queen size</h3>
+          <img src="boxqueensize.png" alt="Box queen size">
+          <p>R$ 380</p>
+        </a>
+      </div>
+      <div class="product">
+        <a href="produto.html?produto=box-king-size">
+          <h3>Box king size</h3>
+          <img src="boxkingsize.png" alt="Box king size">
+          <p>R$ 420</p>
+        </a>
       </div>
     </div>
-    <div class="info">
-      <div class="stars">★★★★★</div>
-      <p><strong>Classificação:</strong> 4.9 (baseado em +450 vendas)</p>
-      <p><strong>Descrição:</strong> Conforto, durabilidade e espaço extra. Perfeita para casais que valorizam organização e descanso.</p>
-      <p><strong>Dimensões:</strong> 1,88m (C) x 1,38m (L) x 0,42m (A)</p>
-      <p><strong>Cuidados:</strong> Limpeza com pano seco</p>
-      <p><strong>Material:</strong> Madeira maciça de 5cm com reforços</p>
-      <a class="btn-whats" href="https://wa.me/5551999313344?text=Olá! Tenho interesse no produto Baú Casal." target="_blank">💬 Comprar pelo WhatsApp</a>
-    </div>
-  </div>
+  </section>  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>A Sloth nasceu com uma missão simples: ajudar você a descansar melhor. Produzimos camas de qualidade, com carinho e dedicação, direto de Sapiranga-RS.</p>
+  </section>  <section id="contato">
+    <h2>Contato</h2>
+    <p>Fale com a gente no WhatsApp: <a href="https://wa.me/5551999313344" target="_blank">(51) 99931-3344</a></p>
+    <p>Instagram: <a href="https://instagram.com/slothcamas" target="_blank">@slothcamas</a></p>
+    <p>Estamos em Sapiranga - RS</p>
+  </section><a class="btn-whats" href="https://wa.me/5551999313344" target="_blank">💬 WhatsApp</a>
+
+  <footer>
+    <p>&copy; 2025 Sloth Camas. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
