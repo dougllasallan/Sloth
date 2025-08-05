@@ -1,49 +1,111 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Baú casal - Sloth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baú Casal - Sloth</title>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Comfortaa', sans-serif;
-      background: #7b7b7b;
-      color: #fff;
       margin: 0;
-      padding: 20px;
+      background-color: #7b7b7b;
+      color: #fff;
+    }
+    header {
+      background-color: #53576b;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
     }
     .container {
-      max-width: 600px;
-      margin: auto;
-      background: white;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px;
+      background-color: #fff;
       color: #000;
       border-radius: 10px;
-      padding: 20px;
+      max-width: 1200px;
+      margin: 30px auto;
     }
-    img {
+    .main-image {
+      flex: 1;
+      padding: 10px;
+    }
+    .main-image img {
       width: 100%;
-      border-radius: 8px;
-      margin-bottom: 20px;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+    .thumbnail-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .thumbnail-row img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .info {
+      flex: 1;
+      padding: 10px;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    .stars {
+      font-size: 20px;
+      color: gold;
     }
     .btn-whats {
       display: inline-block;
       background: #25D366;
       color: white;
-      padding: 15px 25px;
+      padding: 10px 20px;
       border-radius: 50px;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 16px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Baú casal</h1>
-    <img src="baúcasal.png" alt="Baú casal">
-    <p><strong>Preço:</strong> R$ 550</p>
-    <p>Conforto, durabilidade e espaço extra para guardar suas coisas. Ideal para casais que valorizam praticidade.</p>
-    <a class="btn-whats" href="https://wa.me/5551999313344?text=Olá! Tenho interesse na cama Baú casal." target="_blank">💬 Comprar pelo WhatsApp</a>
+  <header>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="index.html#produtos">Produtos</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+  </header>  <div class="container">
+    <div class="main-image">
+      <h1><strong>Baú Casal</strong></h1>
+      <img src="baúcasal.png" alt="Baú Casal">
+      <div class="thumbnail-row">
+        <img src="baúcasal_preto.png" alt="Baú Casal Preto">
+        <img src="baúcasal_cinza.png" alt="Baú Casal Cinza">
+        <img src="baúcasal_marrom.png" alt="Baú Casal Marrom">
+        <img src="baúcasal_rosa.png" alt="Baú Casal Rosa">
+        <img src="baúcasal_branco.png" alt="Baú Casal Branco">
+      </div>
+    </div>
+    <div class="info">
+      <div class="stars">★★★★★</div>
+      <p><strong>Classificação:</strong> 4.9 (baseado em +450 vendas)</p>
+      <p><strong>Descrição:</strong> Conforto, durabilidade e espaço extra. Perfeita para casais que valorizam organização e descanso.</p>
+      <p><strong>Dimensões:</strong> 1,88m (C) x 1,38m (L) x 0,42m (A)</p>
+      <p><strong>Cuidados:</strong> Limpeza com pano seco</p>
+      <p><strong>Material:</strong> Madeira maciça de 5cm com reforços</p>
+      <a class="btn-whats" href="https://wa.me/5551999313344?text=Olá! Tenho interesse no produto Baú Casal." target="_blank">💬 Comprar pelo WhatsApp</a>
+    </div>
   </div>
 </body>
 </html>
