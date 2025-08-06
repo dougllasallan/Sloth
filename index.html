@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title></title>
+  <title>Contador Sloth</title>
   <style>
     body {
       background-color: white;
@@ -15,10 +15,7 @@
       height: 100vh;
       margin: 0;
     }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
+    h1 { font-size: 24px; margin-bottom: 20px; }
     button {
       font-size: 16px;
       padding: 10px 20px;
@@ -28,80 +25,55 @@
       border-radius: 6px;
       cursor: pointer;
     }
-    #avaliacoes {
-      margin-top: 15px;
-      font-weight: bold;
-    }
+    #avaliacoes { margin-top: 15px; font-weight: bold; }
   </style>
 </head>
 <body>
-  <h1 id="visitas">Visitas: ...</h1>
+  <h1 id="visitas">Visitas: …</h1>
   <button onclick="avaliar()">Clique para avaliar</button>
-  <div id="avaliacoes">Avaliações: ...</div>
+  <div id="avaliacoes">Avaliações: …</div>
 
   <script>
-    const binId = "6892ab83f7e7a370d1f4e106";
-    const apiKey = "$2a$10$HyhiMT27kG1KgXRHa43E6O5GdCah9pClCCzHYSFcsulkKvDHSTHC";
-    const binUrl = `https://api.jsonbin.io/v3/b/${binId}`;
+    const apiUrl = "https://sheetdb.io/api/v1/3hdj1why4meyh";
 
     async function carregarDados() {
       try {
-        const res = await fetch(binUrl, {
-          headers: {
-            "X-Master-Key": apiKey
-          }
-        });
-        const data = await res.json();
-        let visitas = data.record.visitas || 0;
-        let avaliacoes = data.record.avaliacoes || 0;
+        const res = await fetch(apiUrl);
+        const [record] = await res.json();
+        let visitas = parseInt(record.visitas) || 0;
+        let avaliacoes = parseInt(record.avaliacoes) || 0;
 
-        // Atualiza contagem de visitas
         visitas++;
         document.getElementById("visitas").innerText = "Visitas: " + visitas;
         document.getElementById("avaliacoes").innerText = "Avaliações: " + avaliacoes;
 
-        // Atualiza no banco
-        await fetch(binUrl, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Master-Key": apiKey,
-            "X-Bin-Versioning": "false"
-          },
-          body: JSON.stringify({ visitas, avaliacoes })
+        await fetch(apiUrl, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ visitas })
         });
-      } catch (error) {
-        console.error("Erro ao carregar dados:", error);
-        document.getElementById("visitas").innerText = "Erro ao contar visitas";
+      } catch (err) {
+        console.error(err);
+        document.getElementById("visitas").innerText = "Erro";
       }
     }
 
     async function avaliar() {
       try {
-        const res = await fetch(binUrl, {
-          headers: {
-            "X-Master-Key": apiKey
-          }
-        });
-        const data = await res.json();
-        let visitas = data.record.visitas || 0;
-        let avaliacoes = (data.record.avaliacoes || 0) + 1;
-
+        const res = await fetch(apiUrl);
+        const [record] = await res.json();
+        let avaliacoes = parseInt(record.avaliacoes) || 0;
+        avaliacoes++;
         document.getElementById("avaliacoes").innerText = "Avaliações: " + avaliacoes;
 
-        // Atualiza no banco
-        await fetch(binUrl, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Master-Key": apiKey,
-            "X-Bin-Versioning": "false"
-          },
-          body: JSON.stringify({ visitas, avaliacoes })
+        await fetch(apiUrl, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ avaliacoes })
         });
-      } catch (error) {
-        console.error("Erro ao avaliar:", error);
-        alert("Erro ao enviar avaliação.");
+      } catch (err) {
+        console.error(err);
+        alert("Erro ao avaliar");
       }
     }
 
