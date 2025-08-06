@@ -7,20 +7,57 @@
   <style>
     body {
       background-color: white;
-      margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
-    img {
-      width: 300px;
-      height: auto;
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      background-color: #53576b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #avaliacoes {
+      margin-top: 15px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <img src="cama.gif" alt="Cama abrindo e fechando">
+  <h1 id="visitas">Visitas: 0</h1>
+
+  <button onclick="avaliar()">Clique para avaliar</button>
+  <div id="avaliacoes">Avaliações: 0</div>
+
+  <script>
+    // Contador de visitas (local para testes)
+    let visitas = localStorage.getItem("visitas") || 0;
+    visitas++;
+    localStorage.setItem("visitas", visitas);
+    document.getElementById("visitas").innerText = "Visitas: " + visitas;
+
+    // Contador de avaliações
+    let avaliacoes = localStorage.getItem("avaliacoes") || 0;
+
+    function avaliar() {
+      avaliacoes++;
+      localStorage.setItem("avaliacoes", avaliacoes);
+      document.getElementById("avaliacoes").innerText = "Avaliações: " + avaliacoes;
+    }
+
+    // Atualiza ao carregar
+    document.getElementById("avaliacoes").innerText = "Avaliações: " + avaliacoes;
+  </script>
 </body>
 </html>
