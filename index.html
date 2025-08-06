@@ -1,188 +1,26 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SLOTH</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+  <title></title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
+      background-color: white;
       margin: 0;
       padding: 0;
-    }
-    body {
-      font-family: 'Comfortaa', sans-serif;
-      background: white;
-      color: black;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      padding: 15px 20px;
-      border-bottom: 1px solid #ccc;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-    .icons {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-    .icons img {
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-    }
-    .gif-banner {
-      width: 100%;
-      height: auto;
-    }
-    .hidden-section {
-      display: none;
-      padding: 20px;
-      background: white;
-    }
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-    .product-grid .product {
-      text-align: center;
-    }
-    .product img {
-      width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-    footer {
-      background: white;
-      color: black;
-      padding: 30px 20px;
-      font-size: 14px;
-    }
-    footer section {
-      margin-bottom: 20px;
-    }
-    .footer-title {
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .footer-content {
-      display: none;
-      margin-top: 10px;
-    }
-    .footer-bottom {
-      border-top: 1px solid #ccc;
-      padding-top: 10px;
-      font-size: 12px;
-    }
-    .social-icons {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
+      align-items: center;
+      height: 100vh;
     }
-    .social-icons img {
-      width: 24px;
-      height: 24px;
-    }
-    .left-label {
-      text-align: left;
-      margin-top: 15px;
-      font-weight: bold;
+    img {
+      width: 300px;
+      height: auto;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">SLOTH</div>
-    <div class="icons">
-      <img src="lupa.png" alt="Pesquisar" onclick="toggleSearch()">
-      <img src="carrinho.png" alt="Carrinho">
-      <img src="menu.png" alt="Menu" onclick="toggleProdutos()">
-    </div>
-  </header>  <!-- GIF inicial -->  <img src="animacao-cama.gif" class="gif-banner" alt="Cama com movimento">  <!-- Produtos -->  <div id="produtos" class="hidden-section">
-    <div class="product-grid">
-      <div class="product"><img src="baúsolteiro.png" alt="Baú Solteiro"><p>Baú Solteiro</p></div>
-      <div class="product"><img src="baúcasal.png" alt="Baú Casal"><p>Baú Casal</p></div>
-      <div class="product"><img src="baúqueensize.png" alt="Baú Queen Size"><p>Baú Queen Size</p></div>
-      <div class="product"><img src="baúkingsize.png" alt="Baú King Size"><p>Baú King Size</p></div>
-      <div class="product"><img src="boxsolteiro.png" alt="Box Solteiro"><p>Box Solteiro</p></div>
-      <div class="product"><img src="boxcasal.png" alt="Box Casal"><p>Box Casal</p></div>
-      <div class="product"><img src="boxqueensize.png" alt="Box Queen Size"><p>Box Queen Size</p></div>
-      <div class="product"><img src="boxkingsize.png" alt="Box King Size"><p>Box King Size</p></div>
-    </div>
-    <div class="footer-title" onclick="toggleSobre()">sobre \/</div>
-    <div id="sobre" class="footer-content">
-      <p>Endereço: Rua Exemplo, 123</p>
-      <p>Cidade: Sapiranga - RS</p>
-      <p>Somos fabricantes de camas com foco em conforto, preço justo e entrega rápida.</p>
-    </div>
-  </div>  <!-- Rodapé -->  <footer>
-    <section>
-      <div class="footer-title" onclick="toggleFooter('suporte')">suporte \/</div>
-      <div id="suporte" class="footer-content">
-        <p>Suporte técnico</p>
-        <p>Agendar um reparo</p>
-        <p>WhatsApp</p>
-        <p>Informações de garantia</p>
-      </div>
-    </section><section>
-  <div class="footer-title" onclick="toggleFooter('quemsomos')">quem somos \/</div>
-  <div id="quemsomos" class="footer-content">
-    <p>Endereço: Rua Exemplo, 123</p>
-    <p>Cidade: Sapiranga - RS</p>
-  </div>
-</section>
-
-<section class="footer-bottom">
-  <p>Copyright© 2020-2025 SLOTH. Todos os direitos reservados.</p>
-  <p>Esse website é melhor visualizado nas versões Microsoft Internet Explorer 11 ou superior e/ou nas últimas versões dos navegadores Google Chrome e Mozilla Firefox.</p>
-  <p>Formas de pagamento aceitas: Pagamento na entrega, Pix, Dinheiro, Cartão de crédito 12x c/juros (Visa, MasterCard e Elo).</p>
-  <p class="left-label">Brasil/Português</p>
-  <div style="text-align: center;">
-    <p><strong>Siga-nos</strong></p>
-    <div class="social-icons">
-      <img src="facebook.png" alt="Facebook">
-      <img src="instagram.png" alt="Instagram">
-    </div>
-  </div>
-</section>
-
-  </footer>  <script>
-    function toggleProdutos() {
-      const el = document.getElementById('produtos');
-      el.style.display = el.style.display === 'block' ? 'none' : 'block';
-    }
-    function toggleSobre() {
-      const el = document.getElementById('sobre');
-      el.style.display = el.style.display === 'block' ? 'none' : 'block';
-    }
-    function toggleFooter(id) {
-      const el = document.getElementById(id);
-      el.style.display = el.style.display === 'block' ? 'none' : 'block';
-    }
-    function toggleSearch() {
-      const termo = prompt("Digite o nome do produto para pesquisar:");
-      if (!termo) return;
-      const produtos = document.querySelectorAll(".product p");
-      produtos.forEach(p => {
-        const card = p.parentElement;
-        if (p.textContent.toLowerCase().includes(termo.toLowerCase())) {
-          card.style.border = "2px solid green";
-        } else {
-          card.style.border = "none";
-        }
-      });
-    }
-  </script></body>
+  <img src="cama.gif" alt="Cama abrindo e fechando">
+</body>
 </html>
